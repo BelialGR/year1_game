@@ -21,6 +21,13 @@ add_custom_target(copy_resources ALL COMMAND ${CMAKE_COMMAND}
     ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/$<CONFIGURATION>/res
 )
 
+#### Coursework ####
+file(GLOB_RECURSE SOURCES Coursework/*.cpp Coursework/*.h)
+add_executable(COURSEWORK ${SOURCES})
+target_include_directories(COURSEWORK PRIVATE ${SFML_INCS})
+target_link_libraries(COURSEWORK sfml-graphics)
+
+
 #### Practical 1 ####
 file(GLOB_RECURSE SOURCES practical_1/*.cpp practical_1/*.h)
 add_executable(PRACTICAL_1 ${SOURCES})
